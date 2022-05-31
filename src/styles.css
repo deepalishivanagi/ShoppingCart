@@ -1,0 +1,233 @@
+:root {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+body {
+  /* margin: 0rem;
+  margin-right: 3rem; */
+  /* background-image: linear-gradient(to bottom right, #059669, #292524); */
+  background-color: floralwhite;
+}
+* {
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+.App {
+  text-align: center;
+}
+.App h1 {
+  background: linear-gradient(150deg, #059669, #292524);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  font-size: 3rem;
+  font-weight: bolder;
+  margin-bottom: 1rem;
+}
+.Item {
+  width: 310px;
+  height: 300px;
+  margin: 1.5rem;
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  border: none;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0, 1);
+  box-shadow: 0px 13px 10px -7px rgba(71, 27, 27, 0.1);
+}
+.Item div:nth-of-type(1) {
+  position: absolute;
+  padding: 2.5px 0px 0px 0px;
+  width: 100%;
+  opacity: 1;
+  top: 0;
+  color: black;
+}
+
+.Item:hover {
+  box-shadow: 0px 30px 18px -8px rgba(0, 0, 0, 0.1);
+  transform: scale(1.05, 1.05);
+}
+
+.Item div:nth-of-type(2) {
+  width: 100%;
+  height: 100%;
+}
+
+.Item div:nth-of-type(2) img {
+  height: 100%;
+  width: 100%;
+}
+
+.Item div:nth-of-type(3) {
+  /* z-index: 2; */
+  /* background-color: #343739; */
+  padding: 16px 24px 78px 24px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+.Item div:nth-of-type(4) {
+  /* z-index: 2; */
+  /* background-color: #343739; */
+  padding: -1px 1px 24px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+.Item div:nth-of-type(3) h3 {
+  font-family: "Raleway", sans-serif;
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 2px;
+  font-weight: 500;
+  color: #f0f0f0;
+}
+
+.Item div:nth-of-type(3) h3 {
+  margin-top: 5px;
+  font-family: "Roboto Slab", serif;
+  color: black;
+}
+.Item div:nth-of-type(4) button {
+  font-family: "Raleway", sans-serif;
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 2px;
+  font-weight: 500;
+  color: black;
+}
+.Item div:nth-of-type(4) span {
+  margin-top: 5px;
+  font-family: "Roboto Slab", serif;
+  color: black;
+}
+.Item div:nth-of-type(5) button {
+  font-family: "Raleway", sans-serif;
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 2px;
+  font-weight: 500;
+  color: black;
+}
+
+.Item:hover div:nth-of-type(2) {
+  height: 100%;
+  opacity: 0.3;
+}
+
+.Item:hover div:nth-of-type(3) {
+  background-color: transparent;
+  color: black;
+}
+.Item:hover div:nth-of-type(3) h3 {
+  color: black;
+}
+.Item:hover div:nth-of-type(4) {
+  background-color: transparent;
+  color: black;
+}
+
+.Item:hover div:nth-of-type(1) {
+  color: black;
+}
+
+/* .Item #Item-div {
+  background-color: white;
+  width: 8rem;
+  border: 0.1rem solid black;
+  padding: 0.5rem 0.2rem;
+  margin: 0.5rem 0.5rem;
+  border-radius: 0.5rem;
+  background: linear-gradient(to bottom right, #059669, #292524);
+}
+.Item img {
+  width: 7rem;
+  height: 7rem;
+}
+.Item img:hover {
+  width: 8rem;
+  height: 8rem;
+} */
+
+.Cart-div {
+  float: right;
+  display: inline;
+  margin-top: -2rem;
+}
+.Cart-div img {
+  width: 4rem;
+  height: 4rem;
+}
+.Cart-div h2 {
+  width: 1rem;
+  height: 2rem;
+  margin-block-end: -10px;
+  margin-inline-start: 12px;
+  color: white;
+}
+
+.MainBill table,
+tr,
+th,
+td {
+  border: 0.1rem solid black;
+}
+.ListOfItems-Main ul {
+  width: 100%;
+}
+nav {
+  /* background-color: black; */
+  background-color: darkseagreen;
+  color: white;
+  height: 8rem;
+
+  /* height: 8rem;
+  width: 112%;
+  margin: -4rem -2rem 6rem -4rem; */
+}
+.link {
+  color: white;
+  padding: 0.6rem;
+  font-size: large;
+  font-style: none;
+  text-decoration: none;
+  display: inline;
+}
+.link:hover {
+  background: linear-gradient(150deg, #059669, #292524);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+.AddSub {
+  /* width: 50rem;
+  height: 10rem; */
+}
+.AddSub button {
+  /* display: inline; */
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  /* clip-path: polygon(10% 10%, 100% 180%, 100% 100%); */
+  border: 1px solid #059669;
+  background-color: transparent;
+  font-size: 1.25rem;
+}
+.AddSub button:hover {
+  background-color: #10b981;
+}
+.Wishlits-main ul {
+  list-style: none;
+}
+/* .Wishlits-main ul {
+  overflow-x: hidden;
+  white-space: nowrap;
+} */
+.Wishlits-main ul li {
+  display: inline-block;
+}
