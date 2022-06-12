@@ -3,6 +3,8 @@ import AdderSubtractor from "./AdderSubtractor.js";
 import { cartWebsiteContext } from "./AppContext";
 import { useContext } from "react";
 import { AppStateContext } from "./AppProvider";
+import { Link } from "react-router-dom";
+import ItemDetailPage from "./ItemDetailPage";
 
 export default function Item(param) {
 
@@ -21,10 +23,6 @@ export default function Item(param) {
           <AdderSubtractor
             item={param.SingleItemData}
             index={param.index}
-            // onPlus={param.onPlus}
-            // onMinus={param.onMinus}
-            // ASCountHandlerBill={param.ItemCountHandlerBill}
-            // ItemCountHandlerItem={param.ItemCountHandlerList}
           />
           <br />
           <button id="WishlistBtn" onClick={WishlistHandler}>WishList</button>
@@ -34,11 +32,9 @@ export default function Item(param) {
   }
 
   return (
+    
     <div className="Item">
-      {/* define class name to return div to assign styles in css file */}
-      {/* <div>
-        <h3>{param.ItemListsData.title}</h3>
-      </div> */}
+      <Link to={`/ItemDetailPage/${param.SingleItemData.id}`} >
       <div className="item-div1">
         <img src={param.SingleItemData.image} alt="book"></img>
       </div>
@@ -48,6 +44,7 @@ export default function Item(param) {
       <div className="item-div3">
         <h3>Rs.{param.SingleItemData.price}</h3>
       </div>
+      </Link>
       {/* <div>
       <AdderSubtractor
             itemArray={param.ItemListsData}
@@ -61,5 +58,6 @@ export default function Item(param) {
       </div> */}
       {RenderMoreIfNeeded()}
     </div>
+   
   );
 }

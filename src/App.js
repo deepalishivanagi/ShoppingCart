@@ -12,6 +12,7 @@ import { cartWebsiteContext } from "./AppContext";
 import {AppStateContext} from "./AppProvider";
 import { FilterStateContext } from "./FilterProvider";
 import { useContext } from "react";
+import ItemDetailPage from "./ItemDetailPage";
 
 export default function App() {
 
@@ -43,6 +44,7 @@ export default function App() {
 
   return (
   <div className="App">
+    {/* <ItemDetailPage/> */}
   <Router>
         <nav>
           <h1>Shopping cart</h1>
@@ -58,11 +60,6 @@ export default function App() {
           <Link class="link" to="/Wishlist">
             Wishlist
           </Link>
-          {/* <Link class="link" to="/PriceRange">
-            PriceRange
-          </Link> */}
-         
-          {/* <Cart count={TotalCount} /> */}
           <Cart />
         </nav>
         
@@ -70,44 +67,28 @@ export default function App() {
           <Route
             path="/ListOfItems"
             element={
-              <ListOfItems
-                // ItemList={DataArray}
-                // length={DataArray.length}
-                // CartPlusHandler={CartPlusHandler}
-                // CartMinusHandler={CartMinusHandler}
-                // CountHandlerBill={ASCountHandlerBill}
-                // AddToWishlist={AddToWishlist}
-                // ItemCountHandler={ASCountHandler}
-                // PriceVal={PriceVal}
-                // shouldFilter={shouldFilter}
-              />
+              <ListOfItems  />
             }
           />
            
           <Route
             path="/ItemBill"
             element={
-              <ItemBill
-                // Itemlist={AppChosenItems}
-                // Itemlength={AppChosenItems.length}
-              />
+              <ItemBill/>
             }
           />
           <Route
             path="/Wishlist"
             element={
-              <Wishlist 
-              // wArray={WishlistArray} 
-              // wlength={WishlistArray.length}
-               />
+              <Wishlist  />
             }
           />
-          {/* <Route
-            path="/PriceRange"
-            element={<PriceRange 
-              // PriceHandler={PriceHandler} 
-              />}
-          /> */}
+          <Route 
+          path="/ItemDetailPage/:Item_id"
+          element={
+            <ItemDetailPage/>
+          }
+          />
         </Routes>
       </Router>
     </div> 

@@ -1,0 +1,14 @@
+.DetailPage-flex-container{
+    display: flex;
+    margin: 2rem 2rem 2rem 2rem;
+    flex-direction: row;
+}
+
+.DetailPage-flex-container img{
+    width: 60%;
+    margin: 1rem 1rem 1rem 1rem;
+}
+.DetailPage-flex-container #Image-detail{
+    width: 75%;
+    margin-top: 7rem;
+}
