@@ -1,15 +1,12 @@
 import { useContext, useState } from "react";
 import "./style2.css";
-import { cartWebsiteContext } from "./AppContext";
 import { AppStateContext } from "./AppProvider";
 
 export default function AdderSubtractor(param) {
-  // var ValuesFromContext=useContext(cartWebsiteContext);
-  // var [CartPlusHandler,CartMinusHandler,ASCountHandler,ASCountHandlerBill]=useContext(AppStateContext);
+  
   var {CartPlusHandler,CartMinusHandler,AddSubCountHandler,AddSubCountHandlerBill} = useContext(AppStateContext);
-
   var AddSubCount = param.item.count;
-  // console.log("item index" + param.index);
+
 
   function PlusHandler() {
     var temp = AddSubCount;

@@ -1,11 +1,8 @@
 import { useContext } from "react";
-import { cartWebsiteContext } from "./AppContext";
 import { AppStateContext } from "./AppProvider";
 
-export default function ItemBill(param) {
-  // var ValuesFromContext =useContext(cartWebsiteContext);
-  // var [AppChosenItems, setAppChosenItems] =useContext(AppStateContext);
-  var {AppChosenItems, setAppChosenItems} =useContext(AppStateContext);
+export default function ItemBill() {
+  var {AppChosenItems} =useContext(AppStateContext);
 
   var SelectedItems = [];
   var sum = 0;

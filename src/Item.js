@@ -1,6 +1,5 @@
 import "./style2.css";
 import AdderSubtractor from "./AdderSubtractor.js";
-import { cartWebsiteContext } from "./AppContext";
 import { useContext } from "react";
 import { AppStateContext } from "./AppProvider";
 import { Link } from "react-router-dom";
@@ -8,7 +7,6 @@ import ItemDetailPage from "./ItemDetailPage";
 
 export default function Item(param) {
 
-  // var ValuesFromContext = useContext(cartWebsiteContext);
   var {AddToWishlist} = useContext(AppStateContext);
 
   function WishlistHandler() {
@@ -45,17 +43,6 @@ export default function Item(param) {
         <h3>Rs.{param.SingleItemData.price}</h3>
       </div>
       </Link>
-      {/* <div>
-      <AdderSubtractor
-            itemArray={param.ItemListsData}
-            index={param.index}
-            // onPlus={param.onPlus}
-            // onMinus={param.onMinus}
-            // ASCountHandlerBill={param.ItemCountHandlerBill}
-            // ItemCountHandlerItem={param.ItemCountHandlerList}
-          />
-          <br />
-      </div> */}
       {RenderMoreIfNeeded()}
     </div>
    

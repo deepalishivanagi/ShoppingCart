@@ -1,12 +1,9 @@
 import Item from "./Item";
-import { cartWebsiteContext } from "./AppContext";
 import { useContext } from "react";
 import { AppStateContext } from "./AppProvider";
 
 export default function Wishlist() {
-  // var ValuesFromContext=useContext(cartWebsiteContext);
-  // var [WishlistArray, setWishlistArray]=useContext(AppStateContext);
-  var {WishlistArray, setWishlistArray}=useContext(AppStateContext);
+  var {WishlistArray}=useContext(AppStateContext);
 
   var WishArray = [];
 
@@ -19,9 +16,7 @@ export default function Wishlist() {
         />
       );
     }
-    console.log("Hello Wishlist");
   }
-  console.log("Hello Wishlist");
 
   return (
     <div className="Wishlits-main">

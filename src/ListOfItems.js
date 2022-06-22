@@ -1,14 +1,11 @@
 import "./style2.css";
 import Item from "./Item.js";
-import { cartWebsiteContext } from "./AppContext";
 import { useContext } from "react";
 import Sidebar from "./Sidebar";
-import { AppStateContext } from "./AppProvider";
 import { FilterStateContext } from "./FilterProvider";
-import { useState } from "react/cjs/react.production.min";
 
 export default function ListOfItems() {
-  var {shouldFilter,PriceVal,ShowingDataArray} =useContext(FilterStateContext);
+  var {ShowingDataArray} =useContext(FilterStateContext);
   var indents = [];
 
   for (var i = 0; i < ShowingDataArray.length; i++) 

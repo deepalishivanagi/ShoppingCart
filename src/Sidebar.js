@@ -1,16 +1,10 @@
 import { useContext } from "react";
-import { useState } from "react/cjs/react.production.min";
-import {AppStateContext} from "./AppProvider";
 import { FilterStateContext } from "./FilterProvider";
 
 export default function Sidebar(){
 
-   
     const {PriceRangeHandler,LowtoHighHandler,HightoLowHandler,HighRateHandler,
         MidRateHandler,LowRateHandler,CategoryHandler,ClearBtnHandler}=useContext(FilterStateContext);
-
-
-  
 
     return(
         <form className="main-Sidebar flex-container">
@@ -45,22 +39,6 @@ export default function Sidebar(){
                 </div>
 
             </div>
-            {/* <div className="Horizontal-wrapper flex-col">
-                <div className=" Filter-header ">
-                    <p>Sort By Availability</p>
-                    <p><button>Clear All</button></p>
-                </div>
-                <div>
-                    <ul className="PriceList flex-col">
-                        <li className="flex-row">
-                            <input type="checkbox"></input>Include out of stock
-                        </li>
-                        <li className="flex-row">
-                            <input type="checkbox"></input>Fast Delivery only
-                        </li>
-                    </ul>
-                </div>
-            </div> */}
             <div className="Horizontal-wrapper flex-col">
                 <div className=" Filter-sort ">
                     <p>Sort By </p>
@@ -104,11 +82,7 @@ export default function Sidebar(){
                     </ul>
                     </form>
                 </div>
-
             </div>
-
-
         </form>
-
     );
 }
