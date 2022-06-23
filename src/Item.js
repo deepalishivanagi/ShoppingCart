@@ -27,6 +27,17 @@ export default function Item(param) {
         </div>
       );
     }
+    else if (!("disableaddbtn" in param) || param.disableaddbtn == true) {
+      return (
+        <div>
+          <AdderSubtractor
+            item={param.SingleItemData}
+            index={param.index}
+          />
+          <br />
+        </div>
+      );
+    }
   }
 
   return (

@@ -20,6 +20,7 @@ export const AppProvider = (props) => {
             if(TempArray2[i].id==id)
             {
                 TempArray2[i].count= temp;
+                // WishlistArray[i].count= temp;
             }
 
         }
@@ -53,7 +54,7 @@ export const AppProvider = (props) => {
     }
 
     function AddToWishlist(id) {
-        let tempWishArray = WishlistArray;
+        let tempWishArray = DataArray;
         for(var i=0;i<tempWishArray.length;i++)
         {
             if(tempWishArray[i].id==id)
@@ -61,8 +62,8 @@ export const AppProvider = (props) => {
                 tempWishArray[i].AddTolist = 1;
             }
         }
-        setWishlistArray(tempWishArray);
-        console.log("Inside Wishlist Array" + JSON.stringify(WishlistArray));
+        setDataArray(tempWishArray);
+        console.log("Inside Wishlist Array" + JSON.stringify(DataArray));
     }
 
 

@@ -26,10 +26,15 @@ export default function ItemDetailPage()
                 <img src={temp[0].image}></img>
             </div>
             <div id="Image-detail">
-                <h2>{temp[0].title}</h2>
-                <h2>{temp[0].description}</h2>
-                <h2>{temp[0].price}</h2>
-                <h2>{temp[0].category}</h2>
+                <h2 id="ItemTitle">{temp[0].title}</h2>
+
+                <hr></hr>
+
+                <h2 id="Itemdesc"><span>Description:  </span>{temp[0].description}</h2>
+                <h2 id="ItemRate"><span>Rate:   </span>{temp[0].rating.rate}</h2>
+                <h2 id="ItemPrice"><span>Price:   </span>Rs. {temp[0].price}</h2>
+                <h2 id="ItemCategory"><span>Category:   </span>{temp[0].category}</h2>
+                
             </div>
 
         </div>

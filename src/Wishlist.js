@@ -3,16 +3,17 @@ import { useContext } from "react";
 import { AppStateContext } from "./AppProvider";
 
 export default function Wishlist() {
-  var {WishlistArray}=useContext(AppStateContext);
+  var {DataArray}=useContext(AppStateContext);
 
   var WishArray = [];
 
-  for (var i = 0; i < WishlistArray.length; i++) {
-    if (WishlistArray[i].AddTolist === 1) {
+  for (var i = 0; i < DataArray.length; i++) {
+    if (DataArray[i].AddTolist === 1) {
       WishArray.push(
         <Item
-          SingleItemData={WishlistArray[i]}
+          SingleItemData={DataArray[i]}
           disableaddbtn={true}
+          index={i}
         />
       );
     }

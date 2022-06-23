@@ -45,7 +45,7 @@
  
   .actual-item{
     width: 25%;
-    padding: 1rem;
+    padding: 2rem;
   }
   .Item {
    
@@ -170,7 +170,7 @@
     display: inline-block;
   }
   #WishlistBtn{
-    margin-top: 0.5rem;
+    margin-top: 1rem;
     font-size: inherit;
     border-radius: 0.5rem;
     background-color: darkseagreen;
