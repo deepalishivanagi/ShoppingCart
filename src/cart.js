@@ -4,8 +4,7 @@ import { useContext } from "react";
 import { AppStateContext } from "./AppProvider";
 
 export default function Cart(param) {
-  // var { count } = param;
-  // const [TotalCount, setTotalCount]=useContext(AppStateContext)
+  
   const {TotalCount, setTotalCount}=useContext(AppStateContext);
 
   return (

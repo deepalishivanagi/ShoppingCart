@@ -7,18 +7,11 @@ import {
 export const AppStateContext = createContext();
 
 export const AppProvider = (props) => {
-    // var [Clcount, setClcount] = useState(0);
     var [DataArray, setDataArray] = useState([]);
     var [TotalCount, setTotalCount] = useState(0);
     var [AppChosenItems, setAppChosenItems] = useState([]);
     var [WishlistArray, setWishlistArray] = useState([]);
-    // var [PriceVal, setPriceVal] = useState();
-    // var [shouldFilter, setshouldFilter] = useState(false);
 
-    // function ClickHandler() {
-    //     console.log("inside Clickhandler");
-    //     setClcount((prevcount) => prevcount + 1);
-    // }
 
     function AddSubCountHandler(temp, id) {
         let TempArray2 = JSON.parse(JSON.stringify(DataArray));
@@ -30,7 +23,6 @@ export const AppProvider = (props) => {
             }
 
         }
-        // TempArray2[index].count = temp;
         setDataArray(TempArray2);
         return;
     }
@@ -48,8 +40,6 @@ export const AppProvider = (props) => {
     function AddSubCountHandlerBill(countValue, id) {
         console.log("App got singal to assign value" + countValue + " to index" + id);
         let TempArray = JSON.parse(JSON.stringify(AppChosenItems));
-        //(TempArray[index].count) ? (TempArray[index].count = quant) : ( );
-        //(typeof (TempArray[index].count) === 'undefined') ?  : (TempArray[index].count = quant);
         for(var i=0;i<TempArray.length;i++)
         {
             if(TempArray[i].id==id)
@@ -58,14 +48,8 @@ export const AppProvider = (props) => {
               
             }
         }
-        // if ("count" in TempArray[index]) {
-        //     TempArray[index].count = countValue;
-        //     setAppChosenItems(TempArray);
-        //     return;
-        // }
         setAppChosenItems(TempArray);
         return;
-        console.log("Inside CountHandler" + quant);
     }
 
     function AddToWishlist(id) {
@@ -77,17 +61,10 @@ export const AppProvider = (props) => {
                 tempWishArray[i].AddTolist = 1;
             }
         }
-        // tempWishArray[index].AddTolist = 1;
         setWishlistArray(tempWishArray);
         console.log("Inside Wishlist Array" + JSON.stringify(WishlistArray));
     }
 
-    // function PriceHandler(price, PriceConditionState) {
-    //     setshouldFilter(PriceConditionState);
-    //     let temp = price;
-    //     console.log(temp + "inApp");
-    //     setPriceVal(temp);
-    // }
 
     return ( 
         <AppStateContext.Provider value = {{

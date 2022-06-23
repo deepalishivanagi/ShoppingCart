@@ -12,15 +12,8 @@ export const FilterProvider = (props) =>
 {
     
     var {DataArray,PriceHandler} = useContext(AppStateContext);
-    var PriceConditionState = "";
-    //set setDupliDataArray in app.js function while setting DataArray so that it can take its first value.
-    // take one state variable for stateclicked or not 
-    // take one state variable for state values
-
-    // var [DupliDataArray, setDupliDataArray] = useState([]);
     var ShowingDataArray =[];
     var [PriceVal, setPriceVal] = useState();
-    // var [shouldFilter, setshouldFilter] = useState(false);
     var [FilterState, setfilterState] =useState({categoryValue:[]});
     //above usestate variable is used to store the user inputs & according to the change it will update. By checking these inputs further functions will work.
     
@@ -120,14 +113,12 @@ export const FilterProvider = (props) =>
         
           var indents = [...datalist];
           indents.sort((first,second) => first.price - second.price);
-          // setDupliDataArray(indents);
           return indents;
       }
       else if('sortfilter' in FilterState && FilterState.sortfilter == true && FilterState.sortway == 'hightolow')
       {
           var indents = [...datalist];
           indents.sort((first,second) => second.price - first.price);
-          // setDupliDataArray(indents);
           return indents;
 
       }
@@ -152,7 +143,6 @@ export const FilterProvider = (props) =>
                 );
             }
           }
-          // setDupliDataArray(indents);
       return indents;
       }
       else if('ratefilter' in FilterState && FilterState.ratefilter == true && FilterState.rate == 'mid')
@@ -166,7 +156,6 @@ export const FilterProvider = (props) =>
             );
           }
         }
-        // setDupliDataArray(indents);
         return indents;
       }
       else if('ratefilter' in FilterState && FilterState.ratefilter == true && FilterState.rate == 'low')
@@ -181,7 +170,6 @@ export const FilterProvider = (props) =>
             );
           }
         }
-        // setDupliDataArray(indents);
         return indents;
       }
 
@@ -198,7 +186,6 @@ export const FilterProvider = (props) =>
         for (var i = 0; i < datalist.length; i++) 
         {
           if (FilterState.categoryValue.includes(datalist[i].category))
-          // if (datalist[i].category == "men's clothing") 
           {
              indents.push(
                datalist[i]

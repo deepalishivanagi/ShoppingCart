@@ -2,15 +2,11 @@
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   }
   body {
-    /* margin: 0rem;
-    margin-right: 3rem; */
-    /* background-image: linear-gradient(to bottom right, #059669, #292524); */
     background-color:gainsboro;
   }
   * {
     margin: 0;
     border: 0;
-    /* box-sizing: border-box; */
   }
    
   html{
@@ -30,11 +26,6 @@
     margin-bottom: 1rem;
   }
   .items-container{
-    /* margin-left: 14rem;
-    display: flex;
-    justify-content: center;
-    align-items: center; */
-    /* margin-left: 15rem; */
     height: 100%;
     width: 100%;
     display: flex;
@@ -58,87 +49,46 @@
   }
   .Item {
    
-    /* width: 60%;
-    height: 80%;
-    border-radius: 0.5rem;
-    overflow: inherit;
-    border: none;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0, 1);
-    box-shadow: 0px 13px 10px -7px rgba(71, 27, 27, 0.1); */
-
     width: 100%;
     height: 31rem;
-    /* height: 50%; */
-    /* position: relative; */
     border-radius: 0.5rem;
-    /* overflow: hidden; */
     overflow: inherit;
     border: none;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0, 1);
     box-shadow: 0px 13px 10px -7px rgb(71 27 27 / 10%);
 
   }
-  /* .Item div:nth-of-type(1){ */
 
   .Item .item-div1{
  
-    /* width: 60%;
-    height: 40%;
-    margin-top: 1.5rem; */
-
     width: 100%;
     height: 20rem;
     margin-top: 1.5rem;
   }
   
-  /* .Item div:nth-of-type(1) img { */
     .Item .item-div1 img{ 
     
-    /* width: 60%;
-    height: 40%;
-    border-radius: 4px;
-    object-fit:fill; */
-
     width: 100%;
     height: 85%;
     border-radius: 4px;
     object-fit: fill;
   }
-  /* .Item div:nth-of-type(2){ */
+
     .Item .item-div2{
    
-    /* height: 25%;
-    width: 50%;
-    margin-top: -4rem;
-    padding: 66px 0px 0px 0px;
-    color: darkgray;
-    margin-bottom: 0rem;
-    margin-left: 5.5rem; */
-
     height: 7rem;
     width: 100%;
     margin-top: -2rem;
-    /* padding: 0px 0px 0px 0px; */
-    /* padding: 66px 0px 0px 0px; */
     color: darkgray;
     margin-bottom: 2rem;
     
   } 
 
-  /* .Item div:nth-of-type(3) { */
-    .Item .item-div3{
-    /* padding: 10px 24px 18px 4px;
-    font-family: "Raleway", sans-serif;
-    text-transform: uppercase;
-    font-size: 13px;
-    letter-spacing: 2px;
-    font-weight: 500;
-    color: black; */
 
+    .Item .item-div3{
     padding: 13px 24px 14px 4px;
     font-family: "Raleway", sans-serif;
     text-transform: uppercase;
-    /* font-size: 13px; */
     letter-spacing: 2px;
     font-weight: 500;
     color: black;
@@ -184,15 +134,11 @@
 
   .ListOfItems-Main {
    
-    /* width: 65%; */
     height: 100%;
-    /* border-top: dotted; */
-     /* top: -18px; */
     margin: 8rem 2rem 2rem 15rem;
   }
  
   nav {
-    /* background-color: black; */
     background-color: darkseagreen;
     color: white;
     height: 8rem;
@@ -201,17 +147,10 @@
     right: 0;
     left: 0;
     z-index: 1;
-    /* position: fixed;
-    width: 100%; */
-  
-    /* height: 8rem;
-    width: 112%;
-    margin: -4rem -2rem 6rem -4rem; */
   }
   .link {
     color: white;
     padding: 0.6rem;
-    /* font-size: large; */
     font-size: 3vh;
     font-style: none;
     text-decoration: none;
@@ -239,11 +178,9 @@
     border: 1px solid #059669;
   }
   .AddSub button {
-    /* display: inline; */
     height: 30px;
     width: 30px;
     border-radius: 50%;
-    /* clip-path: polygon(10% 10%, 100% 180%, 100% 100%); */
     border: 1px solid #059669;
     background-color: transparent;
     font-size: 1.25rem;
@@ -266,9 +203,7 @@
     position: fixed;
     top: 8rem;
     left: 0;
-    /* width: 17rem; */
     width: 37vh;
-    /* height: 30rem; */
     height: 80%;
     overflow-y: scroll;
     border-right: 1px solid var(--light-grey);
@@ -290,7 +225,6 @@
     background-color: transparent;
  }
  .price-header{
-    /* display: flex; */
     justify-content: space-between;
  }
   .Horizontal-wrapper{
@@ -298,7 +232,6 @@
     padding: 1rem;
   }
   .flex-col {
-    /* display: flex; */
     flex-direction: column;
   }
   .flex-row {
@@ -313,9 +246,6 @@
   .PriceList{
     list-style: none;
   }
-  /* .Filter-1{
-      align-self: ;
-  } */
   .wrap{
       flex-wrap: wrap;
   }
