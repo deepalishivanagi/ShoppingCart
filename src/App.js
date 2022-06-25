@@ -46,11 +46,10 @@ export default function App() {
             TotalItemBill{" "}
           </Link>
           <Link class="link" to="/Wishlist">
-            Wishlist
+            Wishlist Items
           </Link>
           <Cart />
         </nav>
-        
         
         <Routes>
           <Route
