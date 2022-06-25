@@ -10,11 +10,11 @@ export const FilterStateContext = createContext();
 
 export const FilterProvider = (props) =>
 {
-    
+
     var {DataArray,PriceHandler} = useContext(AppStateContext);
     var ShowingDataArray =[];
     var [PriceVal, setPriceVal] = useState();
-    var [FilterState, setfilterState] =useState({categoryValue:[]});
+    var [FilterState, setfilterState] =useState({highestValue:0 ,sortway: '',rate: '',categoryValue:[]});
     //above usestate variable is used to store the user inputs & according to the change it will update. By checking these inputs further functions will work.
     
     function ClearBtnHandler(){
@@ -27,19 +27,20 @@ export const FilterProvider = (props) =>
     function PriceRangeHandler(value) {
 
       setfilterState((prevstate) => {return {...prevstate, priceFilter:true, highestValue: value }} );
+      
   
     }
 
     function LowtoHighHandler(){
 
       setfilterState((prevstate) => {return {...prevstate, sortfilter:true, sortway: 'lowtohigh' }} );
-      
+       
     }
       
     function HightoLowHandler(){
 
       setfilterState((prevstate) => {return {...prevstate, sortfilter:true, sortway: 'hightolow' }} );
-    
+     
     }
 
     function HighRateHandler(){
@@ -221,7 +222,7 @@ export const FilterProvider = (props) =>
 
         <FilterStateContext.Provider value={{PriceRangeHandler,ClearBtnHandler,ShowingDataArray, 
           PriceVal, setPriceVal,PriceHandler,LowtoHighHandler,HightoLowHandler,HighRateHandler,MidRateHandler,
-          LowRateHandler,CategoryHandler}}>
+          LowRateHandler,CategoryHandler,FilterState}}>
             {props.children} 
         </FilterStateContext.Provider>
     );

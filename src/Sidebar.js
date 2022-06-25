@@ -1,10 +1,11 @@
 import { useContext } from "react";
+import { AppStateContext } from "./AppProvider";
 import { FilterStateContext } from "./FilterProvider";
 
 export default function Sidebar(){
 
     const {PriceRangeHandler,LowtoHighHandler,HightoLowHandler,HighRateHandler,
-        MidRateHandler,LowRateHandler,CategoryHandler,ClearBtnHandler}=useContext(FilterStateContext);
+        MidRateHandler,LowRateHandler,CategoryHandler,ClearBtnHandler,FilterState}=useContext(FilterStateContext);
 
     return(
         <form className="main-Sidebar flex-container">
@@ -17,7 +18,7 @@ export default function Sidebar(){
                 <div className="PriceSlider-container ">
                     <p>Price</p>
                     <p>
-                        <input type="range" min="1" max="2000"  step="1" className="Price-slider" onChange={(event)=>{PriceRangeHandler(event.target.value)}}></input>
+                        <input type="range" min="1" max="1000"  step="1" value={FilterState.highestValue} className="Price-slider" onChange={(event)=>{PriceRangeHandler(event.target.value)}}></input>
                         <label for="Price-slider">PriceRange</label>
                     </p>
                 </div>
@@ -30,10 +31,10 @@ export default function Sidebar(){
                 <div>
                     <ul className="PriceList flex-col">
                         <li className="flex-row">
-                            <input type="radio" name="price" onChange={LowtoHighHandler}></input>low to high
+                            <input type="radio" name="price" checked={FilterState.sortway=='lowtohigh' ? true : false} onChange={LowtoHighHandler}></input>low to high
                         </li>
                         <li className="flex-row">
-                            <input type="radio" name="price" onChange={HightoLowHandler}></input>high to low
+                            <input type="radio" name="price"  checked={FilterState.sortway=='hightolow' ? true : false} onChange={HightoLowHandler}></input>high to low
                         </li>
                     </ul>
                 </div>
@@ -47,13 +48,13 @@ export default function Sidebar(){
                 <div>
                     <ul className="PriceList flex-col">
                         <li className="flex-row">
-                            <input type="radio" name="rates" onChange={HighRateHandler}></input>4* and above
+                            <input type="radio" name="rates" checked={FilterState.rate=='high' ? true : false} onChange={HighRateHandler}></input>4* and above
                         </li>
                         <li className="flex-row">
-                            <input type="radio" name="rates" onChange={MidRateHandler}></input>3* to 4*
+                            <input type="radio" name="rates" checked={FilterState.rate=='mid' ? true : false} onChange={MidRateHandler}></input>3* to 4*
                         </li>
                         <li className="flex-row">
-                            <input type="radio" name="rates" onChange={LowRateHandler}></input>3* and below
+                            <input type="radio" name="rates" checked={FilterState.rate=='low' ? true : false} onChange={LowRateHandler}></input>3* and below
                         </li>
                     </ul>
                 </div>
@@ -68,16 +69,16 @@ export default function Sidebar(){
                     <form>
                     <ul className="PriceList flex-col">
                         <li className="flex-row">
-                            <input type="checkbox" name='Category' value="men's clothing" onChange={(e)=>{CategoryHandler(e)}}></input> Men's clothing
+                            <input type="checkbox" name='Category' checked={FilterState.categoryValue.includes("men's clothing") ? true : false} value="men's clothing" onChange={(e)=>{CategoryHandler(e)}}></input> Men's clothing
                         </li>
                         <li className="flex-row">
-                            <input type="checkbox" name='Category' value="jewelery" onChange={(e)=>{CategoryHandler(e)}}></input> Jewelery
+                            <input type="checkbox" name='Category' checked={FilterState.categoryValue.includes("jewelery") ? true : false} value="jewelery" onChange={(e)=>{CategoryHandler(e)}}></input> Jewelery
                         </li>
                         <li className="flex-row">
-                            <input type="checkbox" name='Category' value="electronics" onChange={(e)=>{CategoryHandler(e)}}></input> Electronics
+                            <input type="checkbox" name='Category' checked={FilterState.categoryValue.includes("electronics") ? true : false} value="electronics" onChange={(e)=>{CategoryHandler(e)}}></input> Electronics
                         </li>
                         <li className="flex-row">
-                            <input type="checkbox" name='Category' value="women's clothing" onChange={(e)=>{CategoryHandler(e)}}></input> Women's clothing
+                            <input type="checkbox" name='Category' checked={FilterState.categoryValue.includes("women's clothing") ? true : false} value="women's clothing" onChange={(e)=>{CategoryHandler(e)}}></input> Women's clothing
                         </li>
                     </ul>
                     </form>
