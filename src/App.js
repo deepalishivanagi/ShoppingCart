@@ -76,6 +76,12 @@ export default function App() {
             <ItemDetailPage/>
           }
           />
+            <Route
+            path="*"
+            element={
+              <ListOfItems  />
+            }
+          />
         </Routes>
       </Router>
     </div> 
