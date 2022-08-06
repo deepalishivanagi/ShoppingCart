@@ -1,17 +1,16 @@
 import Item from "./Item";
-import { useContext } from "react";
-import { AppStateContext } from "./AppProvider";
+import { useSelector } from "react-redux";
 
 export default function Wishlist() {
-  var {DataArray}=useContext(AppStateContext);
+  const state = useSelector((state) => state).AppState;
 
   var WishArray = [];
 
-  for (var i = 0; i < DataArray.length; i++) {
-    if (DataArray[i].AddTolist === 1) {
+  for (var i = 0; i < state.DataArray.length; i++) {
+    if (state.DataArray[i].AddTolist === 1) {
       WishArray.push(
         <Item
-          SingleItemData={DataArray[i]}
+          SingleItemData={state.DataArray[i]}
           disableaddbtn={true}
           index={i}
         />

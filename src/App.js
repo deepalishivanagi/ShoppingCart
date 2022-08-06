@@ -5,14 +5,13 @@ import ItemBill from "./ItemBill";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Wishlist from "./Wishlist";
 import { useEffect } from "react";
-import {AppStateContext} from "./AppProvider";
-import { useContext } from "react";
+
 import ItemDetailPage from "./ItemDetailPage";
+import { useSelector, useDispatch } from "react-redux";
 
 export default function App() {
+  const dispatch = useDispatch();
 
-  const {setDataArray, setAppChosenItems, setWishlistArray} = useContext(AppStateContext);
- 
   async function callServer() {
     const response = await fetch("https://fakestoreapi.com/products?limit=8");
     const data = await response.json();
@@ -21,9 +20,9 @@ export default function App() {
       const presentVal = data[i];
       temp[i] = { ...presentVal, count: 0, AddTolist: 0 };
     }
-    setDataArray(temp);
-    setAppChosenItems(temp);
-    setWishlistArray(temp);
+
+    dispatch({ type: "initialArraySet", temp: temp });
+
     const val = data[0].title;
     console.log(val);
   }
@@ -33,8 +32,8 @@ export default function App() {
   }, []);
 
   return (
-  <div className="App">
-  <Router>
+    <div className="App">
+      <Router>
         <nav>
           <h1>Shopping cart</h1>
           <Link class="link" to="/ListOfItems">
@@ -50,40 +49,15 @@ export default function App() {
           </Link>
           <Cart />
         </nav>
-        
+
         <Routes>
-          <Route
-            path="/ListOfItems"
-            element={
-              <ListOfItems  />
-            }
-          />
-          <Route
-            path="/ItemBill"
-            element={
-              <ItemBill/>
-            }
-          />
-          <Route
-            path="/Wishlist"
-            element={
-              <Wishlist  />
-            }
-          />
-          <Route 
-          path="/ItemDetailPage/:Item_id"
-          element={
-            <ItemDetailPage/>
-          }
-          />
-            <Route
-            path="*"
-            element={
-              <ListOfItems  />
-            }
-          />
+          <Route path="/ListOfItems" element={<ListOfItems />} />
+          <Route path="/ItemBill" element={<ItemBill />} />
+          <Route path="/Wishlist" element={<Wishlist />} />
+          <Route path="/ItemDetailPage/:Item_id" element={<ItemDetailPage />} />
+          <Route path="*" element={<ListOfItems />} />
         </Routes>
       </Router>
-    </div> 
+    </div>
   );
 }

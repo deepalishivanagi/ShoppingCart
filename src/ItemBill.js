@@ -1,33 +1,32 @@
-import { useContext } from "react";
-import { AppStateContext } from "./AppProvider";
+
+import { useSelector } from "react-redux";
 
 export default function ItemBill() {
-  var {AppChosenItems} =useContext(AppStateContext);
+  const state = useSelector((state) => state.AppState);
 
   var SelectedItems = [];
   var sum = 0;
 
-  for (var i = 0; i < AppChosenItems.length; i++) {
-    if(AppChosenItems[i].count!==0)
-    {
+  for (var i = 0; i < state.AppChosenItems.length; i++) {
+    if (state.AppChosenItems[i].count !== 0) {
       SelectedItems.push(
         <tr>
-          <td>{AppChosenItems[i].title}</td>
-          <td>{AppChosenItems[i].count}</td>
-          <td>{AppChosenItems[i].price}</td>
-          <td>{AppChosenItems[i].price * AppChosenItems[i].count}</td>
+          <td>{state.AppChosenItems[i].title}</td>
+          <td>{state.AppChosenItems[i].count}</td>
+          <td>{state.AppChosenItems[i].price}</td>
+          <td>
+            {state.AppChosenItems[i].price * state.AppChosenItems[i].count}
+          </td>
         </tr>
       );
     }
-    
   }
 
   function Add() {
-    for (var i = 0; i < AppChosenItems.length; i++) {
-      sum = sum + AppChosenItems[i].price * AppChosenItems[i].count;
-
+    for (var i = 0; i < state.AppChosenItems.length; i++) {
+      sum = sum + state.AppChosenItems[i].price * state.AppChosenItems[i].count;
     }
-    var finalSum= sum.toFixed(2);
+    var finalSum = sum.toFixed(2);
     return finalSum;
   }
 
@@ -44,7 +43,6 @@ export default function ItemBill() {
         <tr>
           <th>GrandTotal</th>
           <td>Rs. {Add()}</td>
-         
         </tr>
       </table>
     </div>

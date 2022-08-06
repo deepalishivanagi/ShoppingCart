@@ -1,19 +1,22 @@
-import { useContext, useState } from "react";
+
 import "./style2.css";
-import { AppStateContext } from "./AppProvider";
+import { useDispatch } from "react-redux";
 
 export default function AdderSubtractor(param) {
-  
-  var {CartPlusHandler,CartMinusHandler,AddSubCountHandler,AddSubCountHandlerBill} = useContext(AppStateContext);
+  const dispatch = useDispatch();
   var AddSubCount = param.item.count;
-
 
   function PlusHandler() {
     var temp = AddSubCount;
     temp = temp + 1;
-    CartPlusHandler();
-    AddSubCountHandler(temp, param.item.id);
-    AddSubCountHandlerBill(temp, param.item.id);
+
+    dispatch({ type: "CartPlusHandler" });
+    dispatch({ type: "AddSubCountHandler", temp: temp, id: param.item.id });
+    dispatch({
+      type: "AddSubCountHandlerBill",
+      countValue: temp,
+      id: param.item.id,
+    });
   }
 
   function MinusHandler() {
@@ -22,10 +25,13 @@ export default function AdderSubtractor(param) {
       return;
     }
     temp--;
-    AddSubCountHandler(temp, param.item.id);
-    CartMinusHandler();
-    AddSubCountHandlerBill(temp, param.item.id);
-   
+    dispatch({ type: "AddSubCountHandler", temp: temp, id: param.item.id });
+    dispatch({ type: "CartMinusHandler" });
+    dispatch({
+      type: "AddSubCountHandlerBill",
+      countValue: temp,
+      id: param.item.id,
+    });
   }
 
   return (
