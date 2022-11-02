@@ -53,7 +53,9 @@ export default function App() {
         <Routes>
           <Route path="/ListOfItems" element={<ListOfItems />} />
           <Route path="/ItemBill" element={<ItemBill />} />
+          <Route path="/ItemBill2" element={<ItemBill />} />
           <Route path="/Wishlist" element={<Wishlist />} />
+          <Route path="/Wishlist2" element={<Wishlist />} />
           <Route path="/ItemDetailPage/:Item_id" element={<ItemDetailPage />} />
           <Route path="*" element={<ListOfItems />} />
         </Routes>
