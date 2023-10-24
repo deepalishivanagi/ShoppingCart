@@ -5,7 +5,7 @@ import ItemBill from "./ItemBill";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Wishlist from "./Wishlist";
 import { useEffect } from "react";
-
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import ItemDetailPage from "./ItemDetailPage";
 import { useSelector, useDispatch } from "react-redux";
 
@@ -35,19 +35,25 @@ export default function App() {
     <div className="App">
       <Router>
         <nav>
-          <h1>Shopping cart</h1>
-          <Link class="link" to="/ListOfItems">
-            {" "}
-            ListOfItems{" "}
-          </Link>
-          <Link class="link" to="/ItemBill">
-            {" "}
-            TotalItemBill{" "}
-          </Link>
-          <Link class="link" to="/Wishlist">
-            Wishlist Items
-          </Link>
-          <Cart />
+          <div>
+          <h1>ShopNow</h1>
+            <Link class="link" to="/ListOfItems">
+              {" "}
+              ListOfItems{" "}
+            </Link>
+            <Link class="link" to="/ItemBill">
+              {" "}
+              TotalItemBill{" "}
+            </Link>
+          </div>
+          <div>
+            <Link to="/Wishlist">
+              {/* Wishlist Items */}
+              <FavoriteBorderIcon sx={{ fontSize: "xxx-large",color:"white" }} />
+              {/* <p>Wishlist</p> */}
+            </Link>
+            <Cart />
+          </div>
         </nav>
 
         <Routes>
