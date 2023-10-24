@@ -17,13 +17,26 @@
     text-align: center;
   }
   .App h1 {
-    background: linear-gradient(150deg, #059669, #292524);
+    /* background: linear-gradient(150deg, #059669, #292524); */
+    background: linear-gradient(150deg, #c77dff, #292524);
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
     font-size: 3rem;
     font-weight: bolder;
     margin-bottom: 1rem;
+  }
+  .App nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0rem 2rem;
+  }
+  .App nav div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
   }
   .items-container{
     height: 100%;
@@ -58,31 +71,38 @@
     box-shadow: 0px 13px 10px -7px rgb(71 27 27 / 10%);
 
   }
+  .Item a{
+    text-decoration: none;
+  }
 
   .Item .item-div1{
- 
     width: 100%;
     height: 20rem;
     margin-top: 1.5rem;
+    transition: 0.2s;
   }
   
     .Item .item-div1 img{ 
-    
     width: 100%;
     height: 85%;
     border-radius: 4px;
     object-fit: fill;
   }
+  .Item .item-div1 :hover{
+    transform: scale(1.3);
+  }
 
-    .Item .item-div2{
+ .Item .item-div2{
    
-    height: 7rem;
+    /* height: 7rem; */
     width: 100%;
     margin-top: -2rem;
     color: darkgray;
     margin-bottom: 2rem;
-    
   } 
+  .Item .item-div2 h3{
+    height: 50px;
+  }
 
 
     .Item .item-div3{
@@ -92,7 +112,7 @@
     letter-spacing: 2px;
     font-weight: 500;
     color: black;
-    margin-top: -4rem;
+    margin-top: -1rem;
  
   }
   .Item .item-div3 h3
@@ -103,7 +123,7 @@
 
   .Cart-div {
     float: right;
-    display: inline;
+    display: block !important;
     margin-top: -2rem;
   }
   .Cart-div img {
@@ -139,7 +159,8 @@
   }
  
   nav {
-    background-color: darkseagreen;
+    /* background-color: darkseagreen; */
+    background-color: #231942;
     color: white;
     height: 8rem;
     position: fixed;
@@ -155,9 +176,11 @@
     font-style: none;
     text-decoration: none;
     display: inline;
+    letter-spacing: 0.1rem;
   }
   .link:hover {
-    background: linear-gradient(150deg, #059669, #292524);
+    /* background: linear-gradient(150deg, #059669, #292524); */
+    background: linear-gradient(150deg, #e0b1cb, #292524);
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
@@ -173,20 +196,23 @@
     margin-top: 1rem;
     font-size: inherit;
     border-radius: 0.5rem;
-    background-color: darkseagreen;
-    padding: 5px;
-    border: 1px solid #059669;
+    /* background-color: darkseagreen; */
+    background-color: #231942;
+    padding: 0.5rem 1rem;
+    /* border: 1px solid #059669; */
+    border: 1px solid #5e548e;
+    color: white;
   }
   .AddSub button {
     height: 30px;
     width: 30px;
     border-radius: 50%;
-    border: 1px solid #059669;
+    border: 1px solid #231942;
     background-color: transparent;
     font-size: 1.25rem;
   }
   .AddSub button:hover {
-    background-color: #10b981;
+    background-color: #5e548e;
   }
   .Wishlits-main ul {
     list-style: none;
@@ -218,11 +244,30 @@
     padding: 0.5rem 0.5rem;
     margin-bottom: 1rem;
  }
+ .Filter-header p{
+  background-color: #3c096c;
+  color: white;
+  padding: 0.2rem 0rem 0rem 0.7rem;
+  letter-spacing: 0.1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.2rem;
+ }
  .Filter-sort{
    padding: 1rem 1rem;
  }
  .Filter-header button{
-    background-color: transparent;
+  background-color: transparent;
+  color: #3c096c;
+  font-weight: bold;
+  border: 2px solid #3c096c;
+  border-radius: 0.2rem;
+  padding: 0.5rem;
+ }
+ .Filter-header button:hover{
+  color: white;
+  background-color:#3c096c;
  }
  .price-header{
     justify-content: space-between;
@@ -238,6 +283,15 @@
     display: flex;
     align-items: center;
     margin-top: 0.6rem;
+  }
+  .flex-row input[type='radio'] {
+    accent-color: #231942;
+  }
+  .flex-row input[type='checkbox'] {
+    accent-color: #231942;
+  }
+  .PriceSlider-container input[type="range"]{
+    accent-color: #3c096c;
   }
   .Price-slider{
       width: 10rem;

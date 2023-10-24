@@ -1,5 +1,6 @@
 
 import { useDispatch, useSelector } from "react-redux";
+import ArrowRightIcon from '@mui/icons-material/ArrowRight';
 
 export default function Sidebar() {
   const statefilt = useSelector((state) => state.FilterState);
@@ -9,8 +10,8 @@ export default function Sidebar() {
     <form className="main-Sidebar flex-container">
       <div className="Filter-1 Horizontal-wrapper flex-col">
         <div className="Filter-header">
-          <p>Filter</p>
-          <p>
+          <p>Filter <ArrowRightIcon sx={{color:"white",fontSize:"xx-large"}}/></p>
+          <div>
             <button
               onClick={() => {
                 dispatch({ type: "ClearBtnHandler" });
@@ -18,9 +19,9 @@ export default function Sidebar() {
             >
               Clear All
             </button>
-          </p>
+          </div>
         </div>
-        <div className="PriceSlider-container ">
+        <div className="PriceSlider-container">
           <p>Price</p>
           <p>
             <input
