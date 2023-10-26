@@ -8,6 +8,7 @@ import { useEffect } from "react";
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import ItemDetailPage from "./ItemDetailPage";
 import { useSelector, useDispatch } from "react-redux";
+import CartPage from "./Components/CartPage";
 
 export default function App() {
   const dispatch = useDispatch();
@@ -63,6 +64,7 @@ export default function App() {
           <Route path="/Wishlist" element={<Wishlist />} />
           <Route path="/Wishlist2" element={<Wishlist />} />
           <Route path="/ItemDetailPage/:Item_id" element={<ItemDetailPage />} />
+          <Route path="/cart" element={<CartPage/>}/>
           <Route path="*" element={<ListOfItems />} />
         </Routes>
       </Router>
