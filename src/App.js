@@ -17,15 +17,12 @@ export default function App() {
     const response = await fetch("https://fakestoreapi.com/products?limit=8");
     const data = await response.json();
     var temp = JSON.parse(JSON.stringify(data));
-    for (let i = 0; i < data.length; i++) {
-      const presentVal = data[i];
-      temp[i] = { ...presentVal, count: 0, AddTolist: 0 };
-    }
-
+    //don't try to maintain duplicate data by modifying it instead use id's and wherever needed try to filter out & use it
+    // for (let i = 0; i < data.length; i++) {
+    //   const presentVal = data[i];
+    //   temp[i] = { ...presentVal, count: 0, AddTolist: 0 };
+    // }
     dispatch({ type: "initialArraySet", temp: temp });
-
-    const val = data[0].title;
-    console.log(val);
   }
 
   useEffect(() => {
@@ -37,28 +34,24 @@ export default function App() {
       <Router>
         <nav>
           <div>
-          <h1>ShopNow</h1>
-            <Link class="link" to="/ListOfItems">
-              {" "}
-              ListOfItems{" "}
+            <Link class="link" to="/">
+            <h1>ShopNow</h1>
             </Link>
-            <Link class="link" to="/ItemBill">
+            {/* <Link class="link" to="/ItemBill">
               {" "}
               TotalItemBill{" "}
-            </Link>
+            </Link> */}
           </div>
           <div>
             <Link to="/Wishlist">
-              {/* Wishlist Items */}
               <FavoriteBorderIcon sx={{ fontSize: "xxx-large",color:"white" }} />
-              {/* <p>Wishlist</p> */}
             </Link>
             <Cart />
           </div>
         </nav>
 
         <Routes>
-          <Route path="/ListOfItems" element={<ListOfItems />} />
+          <Route path="/" element={<ListOfItems />} />
           <Route path="/ItemBill" element={<ItemBill />} />
           <Route path="/ItemBill2" element={<ItemBill />} />
           <Route path="/Wishlist" element={<Wishlist />} />

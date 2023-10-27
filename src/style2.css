@@ -204,12 +204,19 @@
     color: white;
   }
   .AddSub button {
-    height: 30px;
+    /* height: 30px;
     width: 30px;
     border-radius: 50%;
     border: 1px solid #231942;
     background-color: transparent;
-    font-size: 1.25rem;
+    font-size: 1.25rem; */
+
+    background-color: #ced4da;
+    color: black;
+    font-weight: bold;
+    border: 2px solid #ced4da;
+    border-radius: 0.2rem;
+    padding: 0.5rem;
   }
   .AddSub button:hover {
     background-color: #5e548e;
@@ -347,8 +354,9 @@
     font-weight: 800;
     font-size: larger;
   }
-  .itemCount{
+  .itemCount span{
     font-weight: 600;
+    padding: 0.5rem;
   }
   .itemCount span{
     font-weight: 500;
@@ -370,6 +378,14 @@
     color: white;
     font-weight: bold;
     border: 2px solid #3c096c;
+    border-radius: 0.2rem;
+    padding: 0.5rem;
+  }
+  .quantityBtn{
+    background-color: #ced4da;
+    color: black;
+    font-weight: bold;
+    border: 2px solid #ced4da;
     border-radius: 0.2rem;
     padding: 0.5rem;
   }

@@ -1,9 +1,41 @@
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import AdderSubtractor from '../AdderSubtractor';
 import '../style2.css';
 
 function CartPage() {
     const appState = useSelector((state) => state).AppState;
-    const cartList = appState.AppChosenItems.filter((item) => item.count > 0);
+    const dispatch = useDispatch();
+
+    let sum = 0;
+    let cartList = [];
+    if (appState.CartListItems.length > 0) {
+        for (let i = 0; i < appState.CartListItems.length; i++) {
+            let addData = appState.DataArray.find((item) => item.id == appState.CartListItems[i].id);
+            let count = appState.CartListItems[i].count;
+            if (count == 0) {
+                continue;
+            }
+            else {
+                let newData = { ...addData, count: count };
+                sum = sum + (count * addData.price)
+                cartList.push(newData);
+            }
+        }
+    }
+    else {
+        return (
+            <div>
+                <h1 style={{ marginTop: "10rem" }}>No items added to cart</h1>
+            </div>)
+    }
+
+    function addToWishlistHandler(selectedId) {
+        dispatch({ type: "AddToWishlist", id: selectedId });
+    }
+
+    function removeItemHandler(data) {
+        dispatch({ type: "AddSubCountHandler", temp: 0, id: data.id });
+    }
 
     return (
         <div className='cartSection'>
@@ -19,10 +51,12 @@ function CartPage() {
                                 <div>
                                     <p className='itemTitle'>{item.title}</p>
                                     <p className='itemPrice'>₹ {item.price}</p>
-                                    <p className='itemCount'><span>Qty:</span> {item.count}</p>
+                                    {/* <p className='itemCount'><span>Qty:</span> {item.count}</p> */}
+                                    <p><AdderSubtractor item={item} /></p>
+                                    {/* <p className='itemCount'><button className='quantityBtn'>+</button><span>{item.count}</span><button className='quantityBtn'>-</button></p> */}
                                     <div className='cartBtns'>
-                                        <button className='outlinedBtn'>Remove</button>
-                                        <button className='filledBtn'>Move to Wishlist</button>
+                                        <button className='outlinedBtn' onClick={() => { removeItemHandler(item) }}>Remove</button>
+                                        <button className='filledBtn' onClick={() => { addToWishlistHandler(item.id) }}>Move to Wishlist</button>
                                     </div>
                                 </div>
                             </div>
@@ -31,11 +65,11 @@ function CartPage() {
                 </div>
                 <ul className='price-section'>
                     <li className='textBold'>PRICE DETAILS</li>
-                    <li><div>Total MRP</div><div>₹ 500</div></li>
+                    <li><div>Total MRP</div><div>₹ {sum.toFixed(2)}</div></li>
                     <li><div>Shipping Charge</div><div>FREE</div></li>
-                    <li><div>Discount</div><div>-₹ 100</div></li>
+                    <li><div>Discount</div><div>-₹ {(sum*appState.Discount).toFixed(2)}</div></li>
                     <hr></hr>
-                    <li className='textBold'><div>Total Amount</div><div>₹ 400</div></li>
+                    <li className='textBold'><div>Total Amount</div><div>₹ {(sum.toFixed(2) - (sum*appState.Discount).toFixed(2))}</div></li>
                     <li className='placeOrder'><button className='filledBtn'>PLACE ORDER</button></li>
                 </ul>
             </div>
