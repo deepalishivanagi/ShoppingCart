@@ -8,15 +8,17 @@ export default function Item(param) {
 
   function WishlistHandler() {
     dispatch({ type: "AddToWishlist", id: param.SingleItemData.id });
+  }
 
-    console.log("Inside wishlist handler");
+  function RemoveWishlistHandler(){
+    dispatch({ type: "RemoveFromWishlist", id: param.SingleItemData.id });
   }
 
   function RenderMoreIfNeeded() {
     if (!("disableaddbtn" in param) || param.disableaddbtn == false) {
       return (
         <div>
-          <AdderSubtractor item={param.SingleItemData} index={param.index} />
+          <AdderSubtractor item={param.SingleItemData}/>
           <br />
           <button id="WishlistBtn" onClick={WishlistHandler}>
             WishList
@@ -26,8 +28,11 @@ export default function Item(param) {
     } else if (!("disableaddbtn" in param) || param.disableaddbtn == true) {
       return (
         <div>
-          <AdderSubtractor item={param.SingleItemData} index={param.index} />
+          <AdderSubtractor item={param.SingleItemData}/>
           <br />
+          <button id="WishlistBtn" onClick={RemoveWishlistHandler}>
+            Remove WishList
+          </button>
         </div>
       );
     }

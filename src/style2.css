@@ -2,7 +2,7 @@
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   }
   body {
-    background-color:gainsboro;
+    /* background-color:gainsboro; */
   }
   * {
     margin: 0;
@@ -204,12 +204,19 @@
     color: white;
   }
   .AddSub button {
-    height: 30px;
+    /* height: 30px;
     width: 30px;
     border-radius: 50%;
     border: 1px solid #231942;
     background-color: transparent;
-    font-size: 1.25rem;
+    font-size: 1.25rem; */
+
+    background-color: #ced4da;
+    color: black;
+    font-weight: bold;
+    border: 2px solid #ced4da;
+    border-radius: 0.2rem;
+    padding: 0.5rem;
   }
   .AddSub button:hover {
     background-color: #5e548e;
@@ -303,6 +310,111 @@
   .wrap{
       flex-wrap: wrap;
   }
+
+  /* CartPage styling */
+  .cartSection{
+    margin-top: 10rem;
+    padding:0rem 2rem;
+  }
+  .cart-mainContainer{
+    display: flex;
+    align-items: flex-start;
+  }
+  .itemList-section{
+    width: 70%;
+  }
+  .singleCartItem{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #ced4da;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin: 0.5rem;
+    /* width: 100%; */
+  }
+  .singleCartItem img{
+    width: 150px;
+  }
+  .singleCartItem div:nth-child(1){
+    width: 40%;
+  }
+  .singleCartItem div:nth-child(2){
+    text-align: start;
+    width: 60%;
+  }
+  .singleCartItem div:nth-child(2) p{
+    padding: 0.5rem;
+  }
+  .itemTitle{
+    font-weight: 500;
+    color: #6c757d;
+  }
+  .itemPrice{
+    font-weight: 800;
+    font-size: larger;
+  }
+  .itemCount span{
+    font-weight: 600;
+    padding: 0.5rem;
+  }
+  .itemCount span{
+    font-weight: 500;
+  }
+  .cartBtns{
+    padding: 0.5rem;
+  }
+  .outlinedBtn{
+    background-color: transparent;
+    color: #3c096c;
+    font-weight: bold;
+    border: 2px solid #3c096c;
+    border-radius: 0.2rem;
+    padding: 0.5rem;
+    margin-right: 1rem;
+  }
+  .filledBtn{
+    background-color: #3c096c;
+    color: white;
+    font-weight: bold;
+    border: 2px solid #3c096c;
+    border-radius: 0.2rem;
+    padding: 0.5rem;
+  }
+  .quantityBtn{
+    background-color: #ced4da;
+    color: black;
+    font-weight: bold;
+    border: 2px solid #ced4da;
+    border-radius: 0.2rem;
+    padding: 0.5rem;
+  }
+  .price-section{
+    width: 20%;
+    border: 1px solid #ced4da;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin-top: 0.5rem;
+  }
+  .price-section li{
+    display: flex;
+    justify-content: space-between;
+    line-height: 2rem;
+  }
+  .price-section hr{
+    border: 0.1px solid #ced4da;
+    margin: 0rem 0.2rem;
+  }
+  .textBold{
+    font-size: larger;
+    font-weight: 600;
+  }
+  .placeOrder{
+    display: flex;
+    justify-content: center !important;
+    margin: 2rem 0rem;
+  }
+
   @media only screen and (max-width:500px) { 
       html{
           font-size: 60%;
